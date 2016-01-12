@@ -62,7 +62,7 @@ class Migration(migrations.Migration):
             name='GalleryPlugin',
             fields=[
                 ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
-                ('display_type', models.CharField(blank=True, max_length=256, choices=[(b'default', 'Default'), (b'teaser', 'Teaser')])),
+                ('display_type', models.CharField(blank=True, max_length=256, choices=[('default', 'Default'), ('teaser', 'Teaser')])),
                 ('gallery', models.ForeignKey(verbose_name='Gallery', to='image_gallery.Gallery')),
             ],
             options={
@@ -79,7 +79,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='gallery',
             name='description',
-            field=cms.models.fields.PlaceholderField(slotname=b'description', editable=False, to='cms.Placeholder', null=True, verbose_name='Description'),
+            field=cms.models.fields.PlaceholderField(slotname='description', editable=False, to='cms.Placeholder', null=True, verbose_name='Description'),
             preserve_default=True,
         ),
         migrations.AddField(
